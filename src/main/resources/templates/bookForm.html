@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/default.css}" rel="stylesheet"/>
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon"/>
+    <meta charset="UTF-8"/>
+    <title>书籍管理</title>
+</head>
+
+<body>
+<div class="contentDiv">
+
+    <h5>报名 </h5>
+
+    <legend>
+        <strong>报名</strong>
+    </legend>
+
+    <form th:action="@{/api/user/insert/{action}(action=${action})}" method="post" class="form-horizontal">
+
+        <input type="hidden" name="id" />
+
+        <div class="form-group">
+            <label for="userName" class="col-sm-2 control-label">姓名:</label>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" id="userName" name="userName"
+                       />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="sex">
+                <div class="female">
+                    <label for="female">女</label>
+                    <input type="radio" name="sex" id="female">
+                </div>
+                <div class="male">
+                    <label for="male">男</label>
+                    <input type="radio" name="sex" id="male">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="className" class="col-sm-2 control-label">班级:</label>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" id="className" name="className"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tel" class="col-sm-2 control-label">手机号:</label>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" id="tel" name="tel"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="department" class="col-sm-2 control-label">职位:</label>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" id="department" name="department"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="interest" class="col-sm-2 control-label">兴趣爱好:</label>
+            <div class="col-xs-4">
+                <textarea class="form-control" id="interest" rows="3" name="interest"
+                          ></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input class="btn btn-primary" type="submit" value="提交"/>&nbsp;&nbsp;
+                <input class="btn" type="button" value="返回" onclick="history.back()"/>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
